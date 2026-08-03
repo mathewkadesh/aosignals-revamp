@@ -29,6 +29,11 @@ function Header(){
   const menuButton=useRef<HTMLButtonElement>(null)
   useEffect(()=>{const fn=()=>setScrolled(scrollY>20);fn();addEventListener('scroll',fn);return()=>removeEventListener('scroll',fn)},[])
   useEffect(()=>{
+    const onShow=(event:PageTransitionEvent)=>{if(event.persisted)setOpen(false)}
+    addEventListener('pageshow',onShow)
+    return()=>removeEventListener('pageshow',onShow)
+  },[])
+  useEffect(()=>{
     document.body.classList.toggle('menu-open',open)
     if(!open)return()=>document.body.classList.remove('menu-open')
     const focusable=drawer.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled])')

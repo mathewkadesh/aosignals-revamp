@@ -1,0 +1,2 @@
+import type {LegalSectionData} from '../../data/legal'
+export default function LegalTableOfContents({sections,current}:{sections:LegalSectionData[];current?:string}){return <nav className="legal-toc" aria-label="On this page"><b>On this page</b><ol>{sections.map(section=><li key={section.id}><a href={`#${section.id}`} aria-current={current===section.id?'location':undefined}><span>{section.number}</span>{section.title}</a></li>)}</ol></nav>}

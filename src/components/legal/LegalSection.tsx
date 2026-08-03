@@ -1,0 +1,5 @@
+import {Link2} from 'lucide-react'
+import type {LegalSectionData} from '../../data/legal'
+import LegalCallout from './LegalCallout'
+import LegalWarning from './LegalWarning'
+export default function LegalSection({section}:{section:LegalSectionData}){const copy=()=>void navigator.clipboard?.writeText(`${location.origin}${location.pathname}#${section.id}`);return <section className="legal-section" id={section.id}><header><span>{section.number}</span><h2>{section.title}</h2><button onClick={copy} aria-label={`Copy link to ${section.title}`} title="Copy link to section"><Link2/></button></header>{section.blocks.map((block,index)=>block.type==='p'?<p key={index}>{block.text}</p>:block.type==='ul'?<ul key={index}>{block.items?.map(item=><li key={item}>{item}</li>)}</ul>:block.type==='ol'?<ol key={index}>{block.items?.map(item=><li key={item}>{item}</li>)}</ol>:block.type==='warning'?<LegalWarning key={index}>{block.text}</LegalWarning>:<LegalCallout key={index}>{block.text}</LegalCallout>)}</section>}

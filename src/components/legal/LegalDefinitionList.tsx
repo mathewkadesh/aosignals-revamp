@@ -1,0 +1,1 @@
+export default function LegalDefinitionList({items}:{items:Array<{term:string;definition:string}>}){return <dl className="legal-definitions">{items.map(item=><div key={item.term}><dt>{item.term}</dt><dd>{item.definition}</dd></div>)}</dl>}

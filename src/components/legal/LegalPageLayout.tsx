@@ -1,0 +1,12 @@
+import {Link} from 'react-router-dom'
+import {ArrowUp,ShieldCheck} from 'lucide-react'
+import {useEffect,useState} from 'react'
+import type {LegalDocument} from '../../data/legal'
+import {professionalReviewNotice} from '../../data/legalCompanyDetails'
+import LegalPageHero from './LegalPageHero'
+import LegalTableOfContents from './LegalTableOfContents'
+import LegalPrintActions from './LegalPrintActions'
+import LegalSection from './LegalSection'
+import LegalContactCard from './LegalContactCard'
+import ComplaintsProcess from './ComplaintsProcess'
+export default function LegalPageLayout({document,showComplaints=false}:{document:LegalDocument;showComplaints?:boolean}){const [current,setCurrent]=useState(document.sections[0]?.id);useEffect(()=>{const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.isIntersecting&&setCurrent(entry.target.id)),{rootMargin:'-20% 0px -65%'});document.sections.forEach(section=>{const node=window.document.getElementById(section.id);if(node)observer.observe(node)});return()=>observer.disconnect()},[document]);useEffect(()=>{window.document.title=`${document.title} | Alpha & Omega Signals`},[document.title]);return <main id="main" className="legal-page"><LegalPageHero document={document}/><div className="container-wide legal-layout"><aside><LegalTableOfContents sections={document.sections} current={current}/></aside><article className="legal-document"><div className="legal-mobile-toc"><details><summary>On this page</summary><LegalTableOfContents sections={document.sections} current={current}/></details></div><LegalPrintActions/><div className="legal-review-note"><ShieldCheck/><p><b>Implementation-ready review draft</b>{professionalReviewNotice}</p></div>{document.sections.map(section=><LegalSection section={section} key={section.id}/>)}{showComplaints&&<ComplaintsProcess/>}<LegalContactCard/><div className="related-legal"><span className="eyebrow">Related documents</span><Link to="/terms-and-conditions">Terms</Link><Link to="/privacy-and-cookies">Privacy and cookies</Link><Link to="/risk-disclosure">Risk disclosure</Link><Link to="/non-disclosure-agreement">NDA information</Link></div><a className="return-top" href="#main"><ArrowUp/>Return to top</a></article></div></main>}

@@ -2,7 +2,7 @@ import { Suspense, useEffect, useRef, useState, type FormEvent } from 'react'
 import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { Activity, ArrowRight, Award, BookOpen, Bot, Brain, CalendarDays, CalendarRange, CandlestickChart, ChartNoAxesCombined, Check, ChevronDown, CircleAlert, CircleStop, Cloud, Coins, Compass, Database, Menu, NotebookPen, Newspaper, Play, Radio, Scale, ShieldCheck, SlidersHorizontal, Users, Waypoints, X, MessagesSquare, type LucideIcon } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { siteContent, type TeamMember } from './data/siteContent'
+import { siteContent, withBase, type TeamMember } from './data/siteContent'
 import BotLiveDemo from './components/BotLiveDemo'
 import FounderCarousel, { type FounderSlide } from './components/FounderCarousel'
 import { CommunityPage, EducationPage, LiveAnalysisPage, SignalsPage } from './pages/LearningExperiencePages'
@@ -21,7 +21,7 @@ const legalCopy: Record<string, [string,string]> = {
 function ScrollTop(){ const {pathname}=useLocation(); useEffect(()=>{window.scrollTo(0,0); document.title=`${pathname==='/'?'Trading education & technology':pathname.slice(1).replaceAll('-',' ')} | AOS`},[pathname]); return null }
 function Container({children,className=''}:{children:React.ReactNode,className?:string}){return <div className={`container-wide ${className}`}>{children}</div>}
 function RiskBar(){return <div className="risk-bar"><Container>Trading carries risk. AOS provides educational content and does not guarantee financial returns. <Link to="/risk-disclosure">Read risk disclosure</Link></Container></div>}
-function BrandLogo({footer=false}:{footer?:boolean}){const [missing,setMissing]=useState(false);return <span className={`logo-shell ${footer?'footer-logo':''}`}>{!missing&&<img src="/images/brand/aos-signals-logo.png" alt="Alpha & Omega Signals" onError={()=>setMissing(true)}/>} {missing&&<span className="logo-fallback" aria-label="Alpha & Omega Signals"><b>AΩ</b><small>Signals</small></span>}</span>}
+function BrandLogo({footer=false}:{footer?:boolean}){const [missing,setMissing]=useState(false);return <span className={`logo-shell ${footer?'footer-logo':''}`}>{!missing&&<img src={withBase('/images/brand/aos-signals-logo.png')} alt="Alpha & Omega Signals" onError={()=>setMissing(true)}/>} {missing&&<span className="logo-fallback" aria-label="Alpha & Omega Signals"><b>AΩ</b><small>Signals</small></span>}</span>}
 function Header(){
   const [open,setOpen]=useState(false)
   const [scrolled,setScrolled]=useState(false)
@@ -73,9 +73,9 @@ const pageData:Record<string,{eyebrow:string,title:string,intro:string,sections?
  '/insights':{eyebrow:'Market Insights',title:'Ideas that help you think more clearly.',intro:'Short, practical perspectives on markets, psychology, risk and technology—written for learning, not prediction.'},
 }
 const founderSlides:FounderSlide[]=[
-  {image:'/images/founder/about/yakshan-working-side-v2.webp',alt:'AOS founder Yakshan Karuna reviewing a gold-market chart from a natural side angle',quote:'The chart is only useful when your process tells you what to look for.',context:'Founder perspective · Process'},
-  {image:'/images/founder/about/yakshan-teaching-back-v2.webp',alt:'AOS founder Yakshan Karuna explaining XAU/USD market structure from an over-the-shoulder view',quote:'Knowledge grows when the reasoning is explained, questioned and reviewed.',context:'Founder perspective · Education'},
-  {image:'/images/founder/about/yakshan-community-candid-v2.webp',alt:'AOS founder Yakshan Karuna leading a candid professional learning discussion',quote:'Strong communities turn individual experience into shared development.',context:'Founder perspective · Community'},
+  {image:withBase('/images/founder/about/yakshan-working-side-v2.webp'),alt:'AOS founder Yakshan Karuna reviewing a gold-market chart from a natural side angle',quote:'The chart is only useful when your process tells you what to look for.',context:'Founder perspective · Process'},
+  {image:withBase('/images/founder/about/yakshan-teaching-back-v2.webp'),alt:'AOS founder Yakshan Karuna explaining XAU/USD market structure from an over-the-shoulder view',quote:'Knowledge grows when the reasoning is explained, questioned and reviewed.',context:'Founder perspective · Education'},
+  {image:withBase('/images/founder/about/yakshan-community-candid-v2.webp'),alt:'AOS founder Yakshan Karuna leading a candid professional learning discussion',quote:'Strong communities turn individual experience into shared development.',context:'Founder perspective · Community'},
 ]
 const insightTopics=[
   {title:'Market structure',body:'Learn to recognise context — trend, range and key levels — before reacting to a single candle or headline.',icon:Compass,image:siteContent.images.insights[0]},

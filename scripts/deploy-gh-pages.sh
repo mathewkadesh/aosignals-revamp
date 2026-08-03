@@ -17,6 +17,7 @@ fi
 
 find "$WORKTREE_DIR" -mindepth 1 -maxdepth 1 -not -name '.git' -exec rm -rf {} +
 cp -r dist/. "$WORKTREE_DIR"/
+find "$WORKTREE_DIR" -name '._*' -delete
 touch "$WORKTREE_DIR"/.nojekyll
 
 cd "$WORKTREE_DIR"

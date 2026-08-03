@@ -31,7 +31,7 @@
 .button:hover svg { transform: translateX(3px); }
 .button.small { min-height: 44px; padding: 11px 16px; font-size: .82rem; }
 .button.secondary { border-color: currentColor; background: transparent; color: inherit!important; }
-.hero-section { position: relative; min-height: 590px; display: flex; align-items: center; overflow: hidden; padding-block: clamp(54px, 5vw, 74px); background-image: linear-gradient(90deg,rgba(7,17,15,.98) 0%,rgba(7,17,15,.9) 48%,rgba(7,17,15,.46) 100%), url('/images/design/aos-market-flow.png'); background-size: cover; background-position: center; color: var(--aos-white); }
+.hero-section { position: relative; min-height: 590px; display: flex; align-items: center; overflow: hidden; padding-block: clamp(54px, 5vw, 74px); background-image: linear-gradient(90deg,rgba(7,17,15,.98) 0%,rgba(7,17,15,.9) 48%,rgba(7,17,15,.46) 100%), url('../assets/aos-market-flow.png'); background-size: cover; background-position: center; color: var(--aos-white); }
 .hero-section::before { content: ''; position: absolute; inset: 0; opacity: .14; background-image: linear-gradient(rgba(168,228,214,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(168,228,214,.1) 1px,transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to right,transparent,black 55%,black); }
 .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr); gap: clamp(32px, 4vw, 56px); align-items: center; }
 .hero-copy { position: relative; z-index: 2; }
@@ -78,7 +78,7 @@
 .disclosure { display: flex; align-items: flex-start; gap: 12px; margin-top: 24px; padding: 15px; border: 1px solid var(--aos-border-strong); border-radius: 14px; background: var(--aos-canvas); }
 .disclosure svg { flex: none; color: var(--aos-success); }
 .disclosure p { margin: 0; font-size: .86rem; }
-.bot-section { position: relative; overflow: hidden; background: linear-gradient(90deg,rgba(13,27,32,.98),rgba(13,27,32,.88)),url('/images/design/aos-market-flow.png') center/cover; color: var(--aos-white); }
+.bot-section { position: relative; overflow: hidden; background: linear-gradient(90deg,rgba(13,27,32,.98),rgba(13,27,32,.88)),url('../assets/aos-market-flow.png') center/cover; color: var(--aos-white); }
 .bot-section h2 { color: var(--aos-white); }
 .bot-section .container-wide { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(36px,5vw,64px); align-items: center; }
 .bot-copy p { color: #c2d2cd; }
@@ -193,16 +193,16 @@
 .topic-chip { width: 100%; min-height: 50px; padding: 14px; border: 1px solid var(--aos-border); border-radius: var(--radius-sm); background: var(--aos-white); color: var(--aos-text); font-weight: 700; cursor: pointer; }
 .topic-chip:hover { border-color: var(--aos-mint-strong); }
 .topic-chip.active { border-color: var(--aos-deep); background: var(--aos-deep); color: var(--aos-white); }
-.closing { background-image: linear-gradient(90deg,rgba(7,17,15,.98),rgba(7,17,15,.66)),url('/images/design/aos-market-flow.png'); background-size: cover; background-position: center; color: var(--aos-white); }
+.closing { background-image: linear-gradient(90deg,rgba(7,17,15,.98),rgba(7,17,15,.66)),url('../assets/aos-market-flow.png'); background-size: cover; background-position: center; color: var(--aos-white); }
 .closing h2 { max-width: 800px; color: var(--aos-white); }
 .closing p { color: #c7d8d3; }
 .closing .container-wide { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
-.page-hero { position: relative; overflow: hidden; min-height: 320px; display: flex; align-items: center; padding-block: clamp(52px,5vw,72px); background-image: linear-gradient(90deg,rgba(7,17,15,.98) 0%,rgba(7,17,15,.88) 52%,rgba(7,17,15,.35) 100%),url('/images/design/aos-market-flow.png'); background-size: cover; background-position: center; color: var(--aos-white); }
+.page-hero { position: relative; overflow: hidden; min-height: 320px; display: flex; align-items: center; padding-block: clamp(52px,5vw,72px); background-image: linear-gradient(90deg,rgba(7,17,15,.98) 0%,rgba(7,17,15,.88) 52%,rgba(7,17,15,.35) 100%),url('../assets/aos-market-flow.png'); background-size: cover; background-position: center; color: var(--aos-white); }
 .page-hero-copy { position: relative; z-index: 1; max-width: 900px; }
 .page-hero h1 { max-width: 1000px; color: var(--aos-white); }
 .page-hero p { max-width: 760px; color: #c5d5d0; }
 .page-hero-layout { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(340px,.72fr); gap: clamp(36px,5vw,72px); align-items: center; }
-.page-hero.has-visual { min-height: 430px; background-image: linear-gradient(90deg,rgba(7,17,15,.99),rgba(7,17,15,.78)),url('/images/design/aos-market-flow.png'); }
+.page-hero.has-visual { min-height: 430px; background-image: linear-gradient(90deg,rgba(7,17,15,.99),rgba(7,17,15,.78)),url('../assets/aos-market-flow.png'); }
 .page-hero-founder { position: relative; z-index: 1; overflow: hidden; padding: 8px; border: 1px solid rgba(111,223,189,.34); border-radius: 24px; background: rgba(255,255,255,.07); box-shadow: var(--shadow-lg); }
 .page-hero-founder img { width: 100%; height: 310px; display: block; border-radius: 18px; object-fit: cover; object-position: 25% 23%; }
 .page-hero-founder > span { position: absolute; left: 22px; bottom: 20px; padding: 8px 11px; border-radius: 10px; background: rgba(7,17,15,.82); color: var(--aos-white); font-size: .72rem; font-weight: 700; backdrop-filter: blur(8px); }
@@ -238,7 +238,7 @@
 .form :is(input,textarea,select):focus { outline: none; border-color: var(--aos-mint-strong); box-shadow: 0 0 0 4px rgba(75,205,167,.14); }
 .form .button { width: max-content; }
 .success { margin: 0; padding: 13px; border-radius: 10px; background: var(--aos-aqua-pale); color: var(--aos-success); }
-.login-page { min-height: 760px; display: grid; place-items: center; padding: 70px 20px; background-image: linear-gradient(90deg,rgba(7,17,15,.86),rgba(7,17,15,.48)),url('/images/design/aos-market-flow.png'); background-size: cover; background-position: center; }
+.login-page { min-height: 760px; display: grid; place-items: center; padding: 70px 20px; background-image: linear-gradient(90deg,rgba(7,17,15,.86),rgba(7,17,15,.48)),url('../assets/aos-market-flow.png'); background-size: cover; background-position: center; }
 .login-card { width: min(480px,100%); padding: 40px; border: 1px solid var(--aos-border); border-radius: 28px; background: var(--aos-white); box-shadow: var(--shadow-md); }
 .login-card > .eyebrow { margin: 28px 0 10px; }
 .login-card h1 { margin: 0 0 8px; font-size: 2.5rem; }

@@ -3,6 +3,11 @@ export interface TeamMember { name: string; role: string; bio: string; image: st
 export interface FAQ { question: string; answer: string }
 export interface Plan { id: string; name: string; price: number; period: string; billingNote: string; description: string; valueNote: string; bestFor: string; badge: string; icon: 'calendar'|'range'|'award'|'robot'; features: string[]; featured?: boolean; oneOff?: boolean }
 
+// Public-directory assets are referenced by absolute path, which bypasses Vite's
+// base-aware asset pipeline — so the deploy base must be prepended by hand.
+// See: https://vite.dev/guide/assets.html#the-public-directory
+export const withBase=(path:string)=>`${import.meta.env.BASE_URL.replace(/\/$/,'')}${path}`
+
 export const siteContent = {
   company: { name: 'Alpha and Omega Signals Limited', shortName: 'AOS', number: '16325407', country: 'United Kingdom' },
   hero: {
@@ -30,22 +35,22 @@ export const siteContent = {
   botFeatures: ['Rule-based execution', 'Configurable risk settings', 'Market monitoring', 'Activity history', 'Emergency stop control', 'Selected platform connectivity'],
   benefits: ['Access to the AOS trading course', 'Access to AOS market analysis', 'Access to the educational signals group', 'Live trading and analysis sessions', 'Training sessions and learning library', 'Private member community', 'Selected CEO Q&A sessions', 'Affiliate eligibility, subject to separate terms'],
   team: [
-    { name: 'Yakshan Karuna', role: 'Co-founder, CEO and Senior Trader', bio: 'Brings more than five years of foreign-exchange trading experience and more than ten years of leadership across different industries to AOS strategy, analysis and education.', image: '/images/founder/yakshan-executive-v2.webp', social: { facebook: 'https://www.facebook.com/profile.php?id=100075401247951', instagram: 'https://www.instagram.com/yakshan_karuna/' } },
-    { name: 'Veena Yakshan', role: 'Co-founder and Director', bio: 'Brings more than ten years of accounting and payroll experience, alongside a strong background in leadership and member support.', image: '/images/team/veena-yakshan.webp' },
+    { name: 'Yakshan Karuna', role: 'Co-founder, CEO and Senior Trader', bio: 'Brings more than five years of foreign-exchange trading experience and more than ten years of leadership across different industries to AOS strategy, analysis and education.', image: withBase('/images/founder/yakshan-executive-v2.webp'), social: { facebook: 'https://www.facebook.com/profile.php?id=100075401247951', instagram: 'https://www.instagram.com/yakshan_karuna/' } },
+    { name: 'Veena Yakshan', role: 'Co-founder and Director', bio: 'Brings more than ten years of accounting and payroll experience, alongside a strong background in leadership and member support.', image: withBase('/images/team/veena-yakshan.webp') },
   ] as TeamMember[],
   productStatus: 'Coming soon',
   images: {
-    generatedHero: '/images/founder/yakshan-home-hero-v2.webp', generatedWorkshop: '/images/generated/aos-learning-workshop.webp',
-    generatedProductSuite: '/images/generated/aos-product-suite.webp',
-    founderExecutive: '/images/founder/yakshan-executive-v2.webp', founderEducator: '/images/founder/yakshan-educator-v2.webp',
-    founderWorkshop: '/images/founder/yakshan-workshop-v3.webp',
-    heroDashboard: '/images/hero/aos-hero-dashboard.webp', heroLifestyle: '/images/hero/aos-hero-lifestyle.webp',
-    botDesktop: '/images/bot/aos-bot-interface.webp', botMobile: '/images/bot/aos-bot-mobile.webp', botCloudHero: '/images/bot/aos-bot-cloud-hero-v3.webp',
-    communityEvent: '/images/community/aos-community-event.webp', learningSession: '/images/community/aos-learning-session.webp',
-    lifestyle: '/images/lifestyle/long-term-freedom.webp', companyVision: '/images/about/aos-company-vision.webp',
-    educationRoadmap: '/images/education/education-roadmap.webp', signalsInterface: '/images/signals/educational-signals-interface.webp',
-    membership: '/images/membership/aos-membership-experience.webp',
-    insights: ['/images/insights/insight-01.webp','/images/insights/insight-02.webp','/images/insights/insight-03.webp'],
+    generatedHero: withBase('/images/founder/yakshan-home-hero-v2.webp'), generatedWorkshop: withBase('/images/generated/aos-learning-workshop.webp'),
+    generatedProductSuite: withBase('/images/generated/aos-product-suite.webp'),
+    founderExecutive: withBase('/images/founder/yakshan-executive-v2.webp'), founderEducator: withBase('/images/founder/yakshan-educator-v2.webp'),
+    founderWorkshop: withBase('/images/founder/yakshan-workshop-v3.webp'),
+    heroDashboard: withBase('/images/hero/aos-hero-dashboard.webp'), heroLifestyle: withBase('/images/hero/aos-hero-lifestyle.webp'),
+    botDesktop: withBase('/images/bot/aos-bot-interface.webp'), botMobile: withBase('/images/bot/aos-bot-mobile.webp'), botCloudHero: withBase('/images/bot/aos-bot-cloud-hero-v3.webp'),
+    communityEvent: withBase('/images/community/aos-community-event.webp'), learningSession: withBase('/images/community/aos-learning-session.webp'),
+    lifestyle: withBase('/images/lifestyle/long-term-freedom.webp'), companyVision: withBase('/images/about/aos-company-vision.webp'),
+    educationRoadmap: withBase('/images/education/education-roadmap.webp'), signalsInterface: withBase('/images/signals/educational-signals-interface.webp'),
+    membership: withBase('/images/membership/aos-membership-experience.webp'),
+    insights: ['/images/insights/insight-01.webp','/images/insights/insight-02.webp','/images/insights/insight-03.webp'].map(withBase),
   },
   contact: {
     email: 'hello@aosignals.co.uk', hours: 'We aim to reply within two working days.',

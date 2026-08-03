@@ -40,7 +40,7 @@ export const siteContent = {
   ] as TeamMember[],
   productStatus: 'Coming soon',
   images: {
-    generatedHero: withBase('/images/founder/yakshan-home-hero-v2.webp'), generatedWorkshop: withBase('/images/generated/aos-learning-workshop.webp'),
+    generatedHero: withBase('/images/founder/yakshan-trading-workspace-hero.png'), generatedWorkshop: withBase('/images/generated/aos-learning-workshop.webp'),
     generatedProductSuite: withBase('/images/generated/aos-product-suite.webp'),
     founderExecutive: withBase('/images/founder/yakshan-executive-v2.webp'), founderEducator: withBase('/images/founder/yakshan-educator-v2.webp'),
     founderWorkshop: withBase('/images/founder/yakshan-workshop-v3.webp'),

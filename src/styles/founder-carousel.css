@@ -1,0 +1,25 @@
+.founder-carousel { position:relative; z-index:1; overflow:hidden; border:1px solid rgba(111,223,189,.34); border-radius:24px; background:#0d1c19; box-shadow:var(--shadow-lg); }
+.founder-carousel-stage { overflow:hidden; }
+.founder-carousel figure { margin:0; }
+.founder-carousel img { width:100%; height:280px; display:block; object-fit:cover; object-position:center 18%; }
+.founder-carousel figcaption { min-height:112px; display:grid; grid-template-columns:auto 1fr; gap:13px; align-items:start; padding:18px 20px; border-top:1px solid rgba(255,255,255,.08); background:linear-gradient(135deg,#10231f,#0a1714); }
+.founder-carousel figcaption > svg { width:23px; color:var(--aos-mint); }
+.founder-carousel blockquote { margin:0; color:#fff; font-size:clamp(.9rem,1.35vw,1.08rem); font-weight:650; line-height:1.45; }
+.founder-carousel figcaption span { display:block; margin-top:8px; color:#8fa69f; font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; }
+.founder-carousel-controls { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:0 16px 14px 20px; background:#0a1714; }
+.founder-carousel-controls > div { display:flex; align-items:center; gap:8px; }
+.founder-carousel-controls button { border:0; cursor:pointer; }
+.founder-carousel-dots button { width:22px; height:3px; padding:0; border-radius:99px; background:#36534c; transition:width .25s,background .25s; }
+.founder-carousel-dots button.active { width:38px; background:var(--aos-mint); }
+.founder-carousel-controls > div:last-child button { width:34px; height:34px; display:grid; place-items:center; border:1px solid #29453f; border-radius:10px; background:#122824; color:#fff; }
+.founder-carousel-controls > div:last-child button:hover { border-color:var(--aos-mint); color:var(--aos-mint); }
+.founder-carousel-controls svg { width:15px; }
+.founder-carousel-controls span { color:#8fa69f; font-size:.65rem; font-weight:800; }
+.gold-focus-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+.gold-focus-row span { display:inline-flex; align-items:center; gap:8px; padding:9px 11px; border:1px solid rgba(111,223,189,.2); border-radius:11px; background:rgba(111,223,189,.07); color:#e4f0ec; font-size:.75rem; font-weight:700; }
+.gold-focus-row svg { width:17px; color:var(--aos-mint); }
+@media (max-width:560px) {
+  .founder-carousel img { height:230px; }
+  .founder-carousel figcaption { min-height:130px; padding:15px; }
+  .founder-carousel-controls { padding-inline:15px; }
+}

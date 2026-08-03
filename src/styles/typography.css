@@ -1,0 +1,12 @@
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { color: var(--aos-ink); }
+h1 { font-size: clamp(2.6rem, 5vw, 4.8rem); font-weight: 700; line-height: 1.02; letter-spacing: -.04em; }
+h2 { font-size: clamp(2rem, 3.8vw, 3.5rem); font-weight: 700; line-height: 1.08; letter-spacing: -.035em; }
+h3 { font-size: clamp(1.18rem, 2vw, 1.5rem); font-weight: 650; letter-spacing: -.025em; }
+p { max-width: 68ch; color: var(--aos-text-secondary); font-size: 1rem; line-height: 1.7; }
+.hero-copy h1 { color: var(--aos-white); font-size: clamp(3rem, 6vw, 6rem); font-weight: 700; line-height: .98; letter-spacing: -.05em; }
+.hero-copy h1 span { color: var(--aos-mint); }
+.eyebrow { display: block; margin-bottom: 20px; color: var(--aos-slate); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.eyebrow.light { color: var(--aos-mint); }
+.section-title { max-width: 720px; margin-bottom: 28px; }
+.section-title p, .page-hero p, .hero-copy > p { font-size: clamp(1.05rem, 1.5vw, 1.2rem); }

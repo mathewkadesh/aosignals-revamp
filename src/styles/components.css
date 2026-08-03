@@ -1,6 +1,6 @@
 .risk-bar { position: relative; z-index: 90; padding: 8px 0; border-bottom: 1px solid var(--aos-border); background: var(--aos-surface-soft); color: var(--aos-slate); text-align: center; font-size: .75rem; }
 .risk-bar a { margin-left: 8px; font-weight: 700; text-underline-offset: 3px; }
-.header { position: sticky; top: 0; z-index: 80; border-bottom: 1px solid rgba(255,255,255,.1); background: rgba(7,17,15,.94); color: var(--aos-white); transition: background .3s, box-shadow .3s, color .3s; }
+.header { position: sticky; top: 0; z-index: 96; border-bottom: 1px solid rgba(255,255,255,.1); background: rgba(7,17,15,.94); color: var(--aos-white); transition: background .3s, box-shadow .3s, color .3s; }
 .header.scrolled { border-bottom-color: var(--aos-border); background: rgba(255,255,255,.92); color: var(--aos-ink); box-shadow: 0 8px 30px rgba(7,17,15,.06); backdrop-filter: blur(18px); }
 .nav-wrap { height: 78px; display: flex; align-items: center; gap: 26px; }
 .brand { flex: none; display: inline-flex; align-items: center; text-decoration: none; }

@@ -29,9 +29,12 @@
   .drop-panel { position: static; width: auto; margin: 0 0 8px 12px; box-shadow: none; }
   .mobile-nav-actions { display: grid; gap: 12px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--aos-border); }
   .mobile-nav-actions > a:first-child { min-height: 46px; display: grid; place-items: center; border: 1px solid var(--aos-border-strong); border-radius: 12px; }
-  /* The drawer is inside the header stacking context (z-index 80). Keep the
-     backdrop below that context so it cannot dim or intercept the drawer. */
-  .nav-backdrop { position: fixed; z-index: 70; inset: 0; display: block; border: 0; background: rgba(7,17,15,.52); backdrop-filter: blur(3px); }
+  /* .risk-bar, .header and .nav-backdrop are siblings, each compared directly
+     against one another for stacking (the drawer's own z-index only matters
+     inside .header's context). Order needed: risk-bar (90) < backdrop < header
+     (96), so the backdrop dims/catches clicks over the risk bar too, while
+     staying below the header so the drawer itself stays on top and clickable. */
+  .nav-backdrop { position: fixed; z-index: 92; inset: 0; display: block; border: 0; background: rgba(7,17,15,.52); backdrop-filter: blur(3px); }
   .hero-section { min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; }
   .page-hero-layout { grid-template-columns: 1fr; }

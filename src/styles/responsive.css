@@ -29,7 +29,9 @@
   .drop-panel { position: static; width: auto; margin: 0 0 8px 12px; box-shadow: none; }
   .mobile-nav-actions { display: grid; gap: 12px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--aos-border); }
   .mobile-nav-actions > a:first-child { min-height: 46px; display: grid; place-items: center; border: 1px solid var(--aos-border-strong); border-radius: 12px; }
-  .nav-backdrop { position: fixed; z-index: 85; inset: 0; display: block; border: 0; background: rgba(7,17,15,.52); backdrop-filter: blur(3px); }
+  /* The drawer is inside the header stacking context (z-index 80). Keep the
+     backdrop below that context so it cannot dim or intercept the drawer. */
+  .nav-backdrop { position: fixed; z-index: 70; inset: 0; display: block; border: 0; background: rgba(7,17,15,.52); backdrop-filter: blur(3px); }
   .hero-section { min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; }
   .page-hero-layout { grid-template-columns: 1fr; }
